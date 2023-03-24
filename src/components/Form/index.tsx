@@ -7,11 +7,11 @@ import { BrowserList } from "../BrowserList";
 export function Form() {
   const [isOpen, setIsOpen] = useState(false);
   const [typingName, setTypingName] = useState("");
-  console.log(typingName);
 
   const onSubmit = (event: any) => {
     event.preventDefault();
     const inputName = event.target.elements.name.value.trim();
+    setTypingName("");
     alert(inputName);
   };
 
