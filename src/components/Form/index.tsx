@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { BrowserList } from "../BrowserList";
 
-// interface Props {
-//   setIsOpen: Function;
-// }
 export function Form() {
   const [isOpen, setIsOpen] = useState(false);
   const [typingName, setTypingName] = useState("");
