@@ -28,6 +28,7 @@ export function Form() {
       setIsOpen(false);
     }
   };
+
   return (
     <div onClick={onCloseDropDown} className={s.blockForm}>
       <form id="form" onSubmit={onSubmit} onClick={onClick}>
@@ -44,7 +45,11 @@ export function Form() {
         </button>
       </form>
       {isOpen && (
-        <BrowserList typingName={typingName} setTypingName={setTypingName} />
+        <BrowserList
+          typingName={typingName}
+          setIsOpen={setIsOpen}
+          setTypingName={setTypingName}
+        />
       )}
     </div>
   );

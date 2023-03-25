@@ -12,13 +12,17 @@ const listBrowser = [
 interface Props {
   typingName?: string;
   setTypingName: Function;
+  setIsOpen: Function;
 }
-export function BrowserList({ typingName, setTypingName }: Props) {
+export function BrowserList({ typingName, setTypingName, setIsOpen }: Props) {
+  console.log("BrowserList");
+
   const browsers = listBrowser?.filter((item) =>
-    item?.toLowerCase().includes((typingName ?? "").toLowerCase())
+    item?.toLowerCase().startsWith((typingName ?? "").toLowerCase())
   );
   const onClick = (country: string) => {
     setTypingName(country);
+    setIsOpen(false);
   };
 
   return (
