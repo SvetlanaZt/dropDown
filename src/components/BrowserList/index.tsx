@@ -1,3 +1,6 @@
+import React from "react";
+import s from "./BrowserList.module.css";
+
 const listBrowser = [
   "Chrome",
   "Safari",
@@ -10,22 +13,30 @@ interface Props {
   typingName?: string;
   setTypingName: Function;
 }
+export const BrowserList = React.memo(
+  function BrowserList({ typingName, setTypingName }: Props) {
+    console.log("BrowserList");
 
-export function BrowserList({ typingName, setTypingName }: Props) {
-  const browser = listBrowser?.filter((item) =>
-    item?.toLowerCase().includes((typingName ?? "").toLowerCase())
-  );
-  const onClick = (country: any) => {
-    setTypingName(country);
-  };
+    const browsers = listBrowser?.filter((item) =>
+      item?.toLowerCase().includes((typingName ?? "").toLowerCase())
+    );
+    const onClick = (country: string) => {
+      setTypingName(country);
+    };
 
-  return (
-    <ul>
-      {browser?.map((country) => (
-        <li key={country} onClick={() => onClick(country)}>
-          {country}
-        </li>
-      ))}
-    </ul>
-  );
-}
+    return (
+      <ul className={s.listBrowsers}>
+        {browsers?.map((country) => (
+          <li
+            key={country}
+            onClick={() => onClick(country)}
+            className={s.browser}
+          >
+            {country}
+          </li>
+        ))}
+      </ul>
+    );
+  },
+  () => true
+);
