@@ -1,11 +1,11 @@
 import "./App.css";
-import { Form } from "./components/Form";
+import { Dropdown } from "./components/Dropdown";
 
 function App() {
   console.log("App");
   return (
     <>
-      <Form />
+      <Dropdown />
     </>
   );
 }

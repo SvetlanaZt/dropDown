@@ -18,3 +18,19 @@ border: none;
 width: 90px;
 background-color: #e3e3e3;
 }
+.listBrowsers {
+    width: 250px;
+    background-color: #ababab;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.browser {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #767575;
+}
